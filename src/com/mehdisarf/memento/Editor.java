@@ -5,8 +5,11 @@ import java.util.List;
 
 public class Editor {
 
-    private List<String> previousContents = new ArrayList<>();
     private String content;
+    private List<String> previousContents = new ArrayList<>();
+
+    private String title;
+    private List<String> previousTitles = new ArrayList<>();
 
     public String getContent() {
         return content;
@@ -21,16 +24,24 @@ public class Editor {
         }
     }
 
-    public void undo() {
-        this.content = previousContents.get(previousContents.size() - 1);
-        previousContents.remove(previousContents.size() - 1);
-    }
-
     public List<String> getPreviousContents() {
         return previousContents;
     }
 
     public void setPreviousContents(List<String> previousContents) {
         this.previousContents = previousContents;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void undo() {
+        this.content = previousContents.get(previousContents.size() - 1);
+        previousContents.remove(previousContents.size() - 1);
     }
 }
