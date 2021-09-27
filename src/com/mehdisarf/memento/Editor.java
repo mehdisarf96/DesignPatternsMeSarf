@@ -6,42 +6,32 @@ import java.util.List;
 public class Editor {
 
     private String content;
-    private List<String> previousContents = new ArrayList<>();
-
-    private String title;
-    private List<String> previousTitles = new ArrayList<>();
+    private List<EditorState> prevStates = new ArrayList<>();
 
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
+
         if (this.content == null)
             this.content = content;
         else {
-            previousContents.add(this.content);
+
+            // content ke avaz mishe yani mirim be ye state jadid.
+            EditorState currentState = new EditorState(this.content); // createState() ya hamun createMemento() qarare dar ayande in karo bokone.
+            prevStates.add(currentState);
+
             this.content = content;
         }
     }
 
-    public List<String> getPreviousContents() {
-        return previousContents;
-    }
-
-    public void setPreviousContents(List<String> previousContents) {
-        this.previousContents = previousContents;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public void undo() {
-        this.content = previousContents.get(previousContents.size() - 1);
-        previousContents.remove(previousContents.size() - 1);
+        int lastIndex = prevStates.size() - 1;
+
+        EditorState lastState = prevStates.get(lastIndex);
+        prevStates.remove(lastIndex);
+
+        this.content = lastState.getContent();
     }
 }

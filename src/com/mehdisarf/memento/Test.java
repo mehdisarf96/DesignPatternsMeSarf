@@ -9,10 +9,12 @@ public class Test {
         editor.setContent("be");
         editor.setContent("jim");
 
-        editor.undo();
+        System.out.println(editor.getContent());
+
         editor.undo();
         System.out.println(editor.getContent());
 
-
+        editor.undo();
+        System.out.println(editor.getContent());
     }
 }
