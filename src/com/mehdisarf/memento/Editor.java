@@ -15,18 +15,10 @@ public class Editor {
         this.content = content;
     }
 
-    // hala mibinam ke method e save() careTaker ye EditorState migire va tuye list state hash zakhire mikone.
-    // pas man bayad ye method dashte basham ke khorak e method save() careTaker ro faraham va tamin bokone.
-    // so:
     public EditorState createState() {
-        return new EditorState(this.content); // state ro misaze, va dar yek zaman e moshakhas
-        // az ruye 'internal state' e editor, state ro por mikone va barmigardune.
+        return new EditorState(this.content);
     }
 
-    // zemnan mibnam ke method e pop e careTaker, akharin state, ro barmigardune.
-    // khob in be che dard mikhore? be in dard ke man(yani editor, yani originator) un akharin state, yadegari ro begiram
-    // va internal state am ro restore konam be un state. bargardam be un.
-    // (man e originator enqadr zalil nashodam ke set kardan field ham ro ham yeki dg anjam bede.
     public void restore(EditorState state) {
         this.content = state.getContent();
     }
