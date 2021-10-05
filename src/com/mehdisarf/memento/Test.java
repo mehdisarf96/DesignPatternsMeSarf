@@ -11,10 +11,8 @@ public class Test {
 
         System.out.println(editor.getContent());
 
-        editor.undo();
         System.out.println(editor.getContent());
 
-        editor.undo();
         System.out.println(editor.getContent());
     }
 }
