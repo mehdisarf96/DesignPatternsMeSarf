@@ -5,15 +5,11 @@ public class Demo {
 
         Canvas canvas = new Canvas();
 
-        canvas.setCurrentTool(ToolType.SELECTION);
+        canvas.setCurrentTool(new BrushTool());
         canvas.mouseDown();
         canvas.mouseUp();
 
-        canvas.setCurrentTool(ToolType.BRUSH);
-        canvas.mouseDown();
-        canvas.mouseUp();
-
-        canvas.setCurrentTool(ToolType.ERASER);
+        canvas.setCurrentTool(new SelectionTool());
         canvas.mouseDown();
         canvas.mouseUp();
     }
