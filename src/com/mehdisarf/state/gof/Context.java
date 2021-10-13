@@ -2,17 +2,17 @@ package com.mehdisarf.state.gof;
 
 public class Context {
 
-    private A a;
+    private State state;
 
-    public void request(){ // want to behave differently based on 'a'.
-        a.handle(); // delegates to 'A a' to handle.
+    public void request() { // want to behave differently based on 'state'.
+        state.handle(); // delegates to 'state' to handle.
     }
 
-    public A getA() {
-        return a;
+    public State getState() {
+        return this.state;
     }
 
-    public void setA(A a) {
-        this.a = a;
+    public void setState(State state) {
+        this.state = state;
     }
 }

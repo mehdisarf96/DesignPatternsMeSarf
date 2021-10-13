@@ -5,10 +5,10 @@ public class Demo {
 
         Context context = new Context();
 
-        context.setA(new FirstConcreteA());
+        context.setState(new ConcreteStateA());
         context.request();
 
-        context.setA(new SecondConcreteA());
+        context.setState(new ConcreteStateB());
         context.request();
     }
 }

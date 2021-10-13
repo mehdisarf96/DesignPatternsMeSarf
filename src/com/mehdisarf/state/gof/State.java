@@ -1,5 +1,5 @@
 package com.mehdisarf.state.gof;
 
-public interface A {
+public interface State {
     void handle();
 }
