@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BrowseHistory {
 
-    private List<String> urls = new ArrayList<>();
+    private String[] urls = new String[10];
 
     public void push(String url) {
         urls.add(url);
@@ -20,7 +20,7 @@ public class BrowseHistory {
         return lastUrl;
     }
 
-    public List<String> getUrls() {
+    public String[] getUrls() {
         return urls;
     }
 }
