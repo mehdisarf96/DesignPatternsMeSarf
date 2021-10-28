@@ -1,0 +1,27 @@
+In most of State Pattern examples that I have seen,
+methods of class change their behavior based on just one field (I mean before applying State Pattern
+and I'm not talking about the reference field of the state interface type)
+and also that field has no other use in that class and after applying the State pattern,
+they delete that.
+
+but in my class, I have 2 fields (x and y) that based on their values,
+the print() method changes its behavior.
+and also I use both of these fields in some business logic methods.
+
+the print() method in "(FunClass)" behaves differently based on the internal state of an object
+(by internal state, I mean fields x and y).
+
+so I applied the State Pattern on this class for this method and now we have "FunClassWithStatePattern".
+
+I declared the State interface and In FunClass (which is Context),
+I added a reference field of the state interface type and a public setter that allows overriding the value of that field.
+and then I added 4 classes (X , Y , XY , Nothing) that have implemented State interface.
+
+But look at my constructor and my setters.
+I wanted the state implementation to be selected based on x and y values (values of state field and some other fields(x and y) are related
+And there must be consistency between their values.) and I had to add those if-else statements.
+And it looks like I'm back to the same problem. even worse!
+
+What should be done now with these conditions?
+Is this an example of misuse of State Pattern or not?
+Can we apply the State pattern at the same time and get rid of the conditions?
